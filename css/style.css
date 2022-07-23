@@ -1,0 +1,371 @@
+@import url('./museosanscyrl.css');
+
+:root {
+  --border-color: #98939336;
+  --page-max-width: 1170px;
+
+  --transparent-from: rgba(255, 255, 255, 0.01);
+  --transparent-to: rgba(255, 255, 255, 0.2);
+  --transparent-from-hover: rgba(255, 255, 255, 0.05);
+  --transparent-to-hover: rgba(255, 255, 255, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* height: 100%; */
+}
+
+body {
+  background: linear-gradient(0deg, #000, #000d1b);
+}
+
+.page {
+  background-image: url('../img/background.png');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+}
+
+/* HEADER */
+
+.page__header {
+  width: 100%;
+  height: 100px;
+
+  background-color: #150a0136;
+  border: 1px solid var(--border-color);
+}
+
+.header__wrapper {
+  max-width: var(--page-max-width);
+  height: 100%;
+  margin: auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+}
+
+.header__logo {
+  height: 100%;
+  padding: 10px 10px 20px 25px;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+
+  cursor: pointer;
+
+  transition: background-color 0.3s linear;
+}
+
+.header__logo:hover {
+  background-color: var(--transparent-from-hover);
+}
+
+.header__logo img {
+  height: auto;
+  margin: auto;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 40px;
+
+  list-style: none;
+  text-decoration: none;
+  font: normal 300 16px/32px 'MuseoSansCyrl';
+}
+
+.header__menu a {
+  display: inline-block;
+
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+
+  color: #fff;
+
+  transition: 0.3s linear;
+}
+
+.header__menu a:hover {
+  color: #b1b1b1;
+
+  border-bottom: 1px solid #3d3d3d;
+}
+
+
+/* MAIN */
+
+.page__main {
+  max-width: var(--page-max-width);
+  margin: auto;
+  padding: 40px 0 140px 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col {
+  flex: 1;
+}
+
+.col--right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.row {
+  height: 120px;
+}
+
+/* GREETING */
+
+.greeting {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.greeting__first {
+  font: normal 700 58px 'MuseoSansCyrl';
+  text-transform: uppercase;
+}
+
+.greeting__second {
+  font: normal 300 25px 'MuseoSansCyrl';
+  text-transform: lowercase;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #fff 0%, #ff3f04 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.button-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.button {
+  position: relative;
+
+  padding: 10px 24px;
+  background-color: #16151dbc;
+
+  border: 1px solid;
+  border-image: linear-gradient(160deg, #263e66, #09213d, #111f2d, #23599c);
+  border-image-slice: 1;
+
+  font: normal 100 14px/1 'MuseoSansCyrl';
+  color: rgba(255, 255, 255, 0.5);
+
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: #16151d7f;
+  border: 1px solid;
+  border-image: linear-gradient(160deg, #09213d, #263e66, #23599c, #111f2d);
+  border-image-slice: 1;
+}
+
+/* ACHIEVEMENTS */
+
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(auto-fit, 200px); */
+  /* grid-template-rows: repeat(2, auto); */
+  justify-content: end;
+  gap: 12px;
+}
+
+.achievement {
+  width: 200px;
+  /* 230px */
+  height: 200px;
+  /* 230px */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  font: normal 100 18px/1 'MuseoSansCyrl';
+  color: #fff;
+
+  outline: 2px solid transparent;
+
+  transition: 0.3s linear;
+}
+
+.achievement:hover {
+  outline: 2px solid rgba(255, 255, 255, 0.1);
+
+  cursor: pointer;
+}
+
+.achievement__number {
+  padding-top: 24px;
+
+  display: block;
+  font: normal 700 60px/1 'MuseoSansCyrl';
+}
+
+/* TRANSPARENT BACKGROUND */
+
+.trasparent--right-bottom {
+  background: linear-gradient(145deg, var(--transparent-from) 50%, var(--transparent-to));
+}
+
+.trasparent--right-bottom:hover {
+  background: linear-gradient(145deg, var(--transparent-from-hover) 50%, var(--transparent-to-hover));
+}
+
+.trasparent--right-top {
+  background: linear-gradient(45deg, var(--transparent-from) 50%, var(--transparent-to));
+}
+
+.trasparent--right-top:hover {
+  background: linear-gradient(45deg, var(--transparent-from-hover) 50%, var(--transparent-to-hover));
+}
+
+.trasparent--left-bottom {
+  background: linear-gradient(220deg, var(--transparent-from) 50%, var(--transparent-to));
+}
+
+.trasparent--left-bottom:hover {
+  background: linear-gradient(220deg, var(--transparent-from-hover) 50%, var(--transparent-to-hover));
+}
+
+.trasparent--left-top {
+  background: linear-gradient(320deg, var(--transparent-from) 50%, var(--transparent-to));
+}
+
+.trasparent--left-top:hover {
+  background: linear-gradient(320deg, var(--transparent-from-hover) 50%, var(--transparent-to-hover));
+}
+
+/* CORNERS */
+
+.corner--left-top {
+  width: 7px;
+  height: 7px;
+
+  left: -1px;
+  top: -1px;
+
+  position: absolute;
+
+  border-left: 1px solid #fff;
+  border-top: 1px solid #fff;
+}
+
+.corner--right-top {
+  width: 7px;
+  height: 7px;
+
+  right: -1px;
+  top: -1px;
+
+  position: absolute;
+
+  border-right: 1px solid #fff;
+  border-top: 1px solid #fff;
+}
+
+.corner--left-bottom {
+  width: 7px;
+  height: 7px;
+
+  left: -1px;
+  bottom: -1px;
+
+  position: absolute;
+
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.corner--right-bottom {
+  width: 7px;
+  height: 7px;
+
+  right: -1px;
+  bottom: -1px;
+
+  position: absolute;
+
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.orner--shadow {
+  filter: drop-shadow(0px 0px 2px #fff);
+}
+
+/* MEDIA */
+
+@media screen and (max-width: 945px) {
+  .header__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header__logo {
+    flex: 1;
+
+  }
+
+  .header__menu {
+    justify-content: center;
+  }
+
+  .achievements {
+    justify-content: center;
+  }
+
+  .greeting,
+  .button-wrap {
+    align-items: center;
+  }
+
+  .col {
+    flex-basis: 100%;
+  }
+
+  .col--right {
+    justify-content: center;
+  }
+
+  .gradient-text {
+    background: linear-gradient(180deg, #fff 0%, #ff3f04 40%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
